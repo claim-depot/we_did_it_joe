@@ -1,0 +1,55 @@
+/* Styles for the iframe content */
+
+:root {
+    --slide-duration: 0.3s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    height: 100vh;
+    overflow-y: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: transparent;
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    transform: translateX(100%);
+    transition: transform var(--slide-duration) ease-in-out;
+    will-change: transform;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container.slide-in {
+    transform: translateX(0);
+}
+
+.content {
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.close-button:hover {
+    opacity: 0.8;
+}
+
+/* Include any additional styles needed for your content */

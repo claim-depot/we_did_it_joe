@@ -1,0 +1,332 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Essential styles */ 
+html, body {
+    width: 470px;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #111827; /* Match bg-gray-900 */
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Dropdown menu animations */
+#settingsMenu, #moreOptionsMenu {
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    transform-origin: top right;
+}
+
+#settingsMenu.hidden, #moreOptionsMenu.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* Main container styles */
+.popup-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Main content area with scrolling */
+#mainContent {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Improve scrollbar styling */
+.overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #4B5563;
+    border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+}
+
+/* Keep your existing styles below this line */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.dark-mode {
+    background-color: #111926;
+    color: white;
+}
+
+.dark-mode .bg-white {
+    background-color: #000000;
+    color: white;
+}
+
+.dark-mode .text-black {
+    color: white;
+}
+
+.dark-mode .bg-gray-100 {
+    background-color: #111926;
+}
+
+.dark-mode .text-gray-700 {
+    color: #e5e7eb;
+}
+
+.dark-mode .border-gray-300 {
+    border-color: #374151;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.menu-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dark-mode .menu-item {
+    color: #ffffff;
+}
+
+.dark-mode .menu-item:hover {
+    background-color: #374151;
+}
+
+/* Add after your existing dark mode styles */
+.dark-mode #settingsMenu {
+    background-color: #1F2937;  /* Darker background for the menu */
+}
+
+.dark-mode #settingsMenu span {
+    color: #E5E7EB;  /* Light text color for the settings labels */
+}
+
+.dark-mode #moreOptionsMenu {
+    background-color: #1F2937;
+}
+
+.dark-mode #mainContent {
+    background-color: #111827;  /* Same as your current dark mode background */
+}
+
+:root {
+    --slide-duration: 0.3s;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent !important;
+}
+
+/* Container Animation */
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform var(--slide-duration) ease-in-out;
+    will-change: transform;
+    background-color: white;
+}
+
+.container.slide-in {
+    transform: translateX(0);
+}
+
+/* Ensure smooth animations */
+* {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Base styles */
+:root {
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded flex items-center justify-center;
+}
+
+.btn-outline {
+  @apply border border-gray-300 hover:bg-red-500 hover:text-white hover:border-red-500 rounded-full transition-colors duration-200;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  @apply bg-gray-900 text-white;
+}
+
+.dark-mode .bg-white {
+  @apply bg-black;
+}
+
+.dark-mode .text-gray-700 {
+  @apply text-gray-200;
+}
+
+.dark-mode .bg-gray-100 {
+  @apply bg-[#111926];
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-row:hover {
+  background-color: transparent;
+}
+
+.table-cell {
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+/* Switch component */
+.switch {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500;
+}
+
+.switch[data-state="checked"] {
+  @apply bg-red-600;
+}
+
+.switch[data-state="unchecked"] {
+  @apply bg-gray-200;
+}
+
+/* Avatar component */
+.avatar {
+  @apply relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  @apply relative inline-block text-left;
+}
+
+.dropdown-content {
+  @apply absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
+}
+
+/* Icons */
+.icon {
+  @apply h-5 w-5;
+}
+
+.icon-sm {
+  @apply h-4 w-4;
+}
+
+/* Additional utility classes */
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem;
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0.5rem;
+}

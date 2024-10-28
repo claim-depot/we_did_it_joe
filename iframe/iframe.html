@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Extension Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../popup/popup.css">
+  <link rel="stylesheet" href="iframe.css">
+</head>
+<body class="bg-transparent">
+  <!-- Include the popup container -->
+  <div class="container">
+    <div class="w-[470px] h-[600px] flex flex-col overflow-hidden" id="app">
+      <!-- Header -->
+      <header class="bg-black p-3 flex items-center justify-between shadow-md text-white sticky top-0 z-40">
+        <div class="flex items-center">
+          <img src="../icons/logo.png" alt="Extension Logo" width="120" height="40" class="flex-shrink-0">
+        </div>
+        <div class="flex items-center space-x-2">
+          <button id="settingsButton" class="text-white p-2 rounded-full hover:bg-gray-700">
+            <img src="../icons/settings.png" alt="Settings" class="w-5 h-5">
+          </button>
+          <button id="moreOptionsButton" class="text-white p-2 rounded-full hover:bg-gray-700">
+            <img src="../icons/ellipsis-vertical.png" alt="More Options" class="w-5 h-5">
+          </button>
+        </div>
+      </header>
+      
+      <!-- Dropdown menus -->
+      <div id="settingsMenu" class="hidden absolute right-2 top-16 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+        <div class="py-1">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+      
+      <div id="moreOptionsMenu" class="hidden absolute right-2 top-16 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+        <div class="py-1">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+      
+      <!-- Main content -->
+      <div class="flex-1 overflow-y-auto px-4 py-4 space-y-4 relative bg-gray-100" id="mainContent">
+        <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200" id="settlementAlert">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200" id="potentialClaims">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="popup-initializer.js"></script>
+  <script src="iframe-init.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Class Action Alerts</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body class="bg-transparent">
+    <!-- Add container div for slide animation -->
+    <div class="container">
+        <div class="w-[470px] h-[600px] flex flex-col overflow-hidden" id="app">
+            <!-- Update header to ensure it stays fixed -->
+            <header class="bg-black p-3 flex items-center justify-between shadow-md text-white sticky top-0 z-40">
+                <div class="flex items-center">
+                    <img src="${getAssetUrl('icons/logo.png')}" alt="Extension Logo" width="120" height="40" class="flex-shrink-0">
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button id="settingsButton" class="text-white p-2 rounded-full hover:bg-gray-700">
+                        <img src="../icons/settings.png" alt="Settings" class="w-5 h-5">
+                    </button>
+                    <button id="moreOptionsButton" class="text-white p-2 rounded-full hover:bg-gray-700">
+                        <img src="../icons/ellipsis-vertical.png" alt="More Options" class="w-5 h-5">
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Update dropdown menus positioning -->
+            <div id="settingsMenu" class="hidden absolute right-2 top-16 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                <div class="py-1">
+                    <!-- Placeholder for dynamic content -->
+                </div>
+            </div>
+            
+            <div id="moreOptionsMenu" class="hidden absolute right-2 top-16 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                <div class="py-1">
+                    <!-- Placeholder for dynamic content -->
+                </div>
+            </div>
+            
+            <!-- Update main content area for better spacing -->
+            <div class="flex-1 overflow-y-auto px-4 py-4 space-y-4 relative bg-gray-100" id="mainContent">
+                <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200" id="settlementAlert">
+                    <!-- Settlement alert content -->
+                </div>
+
+                <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200" id="potentialClaims">
+                    <!-- Potential claims content -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
